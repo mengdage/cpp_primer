@@ -15,4 +15,16 @@ int main(){
 		std::cout << item1.isbn() <<std::endl;
 		std::cout << item1.avg_price() <<std::endl;
 		std::cout << item1.combine(item2).avg_price() << std::endl;
+
+		std::cout << "input item1: " << std::flush;
+		read(std::cin, item1);
+		std::cout << "input item2: " << std::flush;
+		read(std::cin, item2);
+		std::cout << "print item1: " << std::endl;
+		print(std::cout, item1)<<std::endl;
+		std::cout << "print item2: " << std::endl;
+		print(std::cout, item2)<<std::endl;
+
+		std::cout << "print item1 + 2: " << std::endl;
+		print(std::cout, add(item1, item2))<<std::endl;
 }
