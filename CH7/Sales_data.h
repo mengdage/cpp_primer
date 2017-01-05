@@ -2,8 +2,13 @@
 #define SALES_DATA_H
 #include <string>
 #include <iostream>
-struct Sales_data{
+class Sales_data{
 
+friend std::istream & read(std::istream & is, Sales_data &item);
+friend std::ostream &print(std::ostream &os, const Sales_data &item);
+
+friend Sales_data add(const Sales_data &item1, const Sales_data &item2);
+	public:
 		// constructor
 		Sales_data() = default;
 		Sales_data(const std::string &s) : bookNo(s) {}
@@ -14,6 +19,7 @@ struct Sales_data{
 		std::string isbn() const {return bookNo;}
 		double avg_price() const;
 
+	private:
 		// data member
 		std::string bookNo;
 		unsigned units_sold = 0;
